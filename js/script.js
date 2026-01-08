@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registrationForm');
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxsBvqthRClczPYhZjsQm1p4-_BbvRqEQCBUB-0hDIlktDW3z_CcUZKjCIqAfIMamodHQ/exec'; // <--- Paste your App Script URL here
+    const scriptURL = 'https://script.google.com/a/macros/kodeitglobal.com/s/AKfycbxAj-SNX7z14qp2E-D_XZ-CaZfKWh8c1Kyu5AkmW--bQO7sqcjUQb2lrvc5ulWgeDke/exec'; // <--- Paste your App Script URL here
 
     registrationForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -17,12 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.disabled = true;
 
         const formData = new FormData(registrationForm);
-        
-        const countryCode = document.getElementById('country_code_input').value;
-        let mobileNumber = document.getElementById('mobile').value.trim();
-        mobileNumber = mobileNumber.replace(/^0+/, '');
-        
-        formData.set('mobile', countryCode +' '+ mobileNumber);
 
         fetch(scriptURL, { 
             method: 'POST', 

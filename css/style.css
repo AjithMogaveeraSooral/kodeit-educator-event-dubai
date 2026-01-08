@@ -174,7 +174,7 @@ h1 {
   font-size: 16px;
   color: var(--label-color);
   font-weight: 500;
-  margin-bottom: 4px;
+  margin-top: 25px;
 }
 
 .form-input {

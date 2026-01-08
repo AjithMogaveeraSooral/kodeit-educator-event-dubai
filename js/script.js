@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registrationForm');
-    const scriptURL = 'https://script.google.com/a/macros/kodeitglobal.com/s/AKfycbxAj-SNX7z14qp2E-D_XZ-CaZfKWh8c1Kyu5AkmW--bQO7sqcjUQb2lrvc5ulWgeDke/exec'; // <--- Paste your App Script URL here
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwJzcSPV8T3peCPowKDD-liIUSoZKnNpcVr2z_6Gs7e_q4WbqQYfirSNvHl6SO313xy/exec'; // <--- Paste your App Script URL here
 
     registrationForm.addEventListener('submit', function(e) {
         e.preventDefault();

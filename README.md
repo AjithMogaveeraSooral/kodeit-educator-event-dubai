@@ -1,2 +1,2 @@
-# kodeit-educator-event-dubai
-kodeit-educator-event-dubai
+# kodeit-educator-event
+Kodeit Educator Event

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registrationForm');
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwJzcSPV8T3peCPowKDD-liIUSoZKnNpcVr2z_6Gs7e_q4WbqQYfirSNvHl6SO313xy/exec'; // <--- Paste your App Script URL here
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby_RGbBgmtXMsWl9GtHXj8Fn0kbnxQBHrE5J6C9AVV_a97pb8UajjaKmkERIKzY9pFI/exec'; // <--- Paste your App Script URL here
 
     registrationForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -17,6 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.disabled = true;
 
         const formData = new FormData(registrationForm);
+
+        // Handle "Other" subject: if Other is selected, use the text input value
+        const subjectOtherRadio = document.getElementById('subjectOther');
+        const subjectOtherInput = document.getElementById('subjectOtherInput');
+        if (subjectOtherRadio && subjectOtherRadio.checked && subjectOtherInput.value.trim()) {
+            formData.set('subject', subjectOtherInput.value.trim());
+        }
 
         fetch(scriptURL, { 
             method: 'POST', 
@@ -74,3 +81,27 @@ window.onclick = function(event) {
     document.getElementById("checkboxes").style.display = "none";
   }
 }
+
+// Toggle subject "Other" input visibility
+function toggleSubjectOther() {
+  const otherRadio = document.getElementById('subjectOther');
+  const otherContainer = document.getElementById('subjectOtherContainer');
+  const otherInput = document.getElementById('subjectOtherInput');
+  
+  if (otherRadio && otherRadio.checked) {
+    otherContainer.style.display = 'block';
+    otherInput.required = true;
+  } else {
+    otherContainer.style.display = 'none';
+    otherInput.required = false;
+    otherInput.value = '';
+  }
+}
+
+// Add event listeners to all subject radio buttons to handle toggling
+document.addEventListener('DOMContentLoaded', function() {
+  const subjectRadios = document.querySelectorAll('input[name="subject"]');
+  subjectRadios.forEach(function(radio) {
+    radio.addEventListener('change', toggleSubjectOther);
+  });
+});

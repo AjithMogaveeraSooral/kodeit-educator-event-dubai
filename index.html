@@ -338,13 +338,16 @@
                     <span>ICT/Computing</span>
                   </label>
                   <label class="custom-radio">
-                    <input type="radio" name="subject" value="ICT Head" />
+                    <input type="radio" name="subject" value="Social Science" />
                     <span>Social Science</span>
                   </label>
-                  <!-- <label class="custom-radio">
-                      <input type="radio" name="subject" value="Other" />
-                      <span>Other</span>
-                    </label> -->
+                  <label class="custom-radio">
+                    <input type="radio" name="subject" value="Other" id="subjectOther" onchange="toggleSubjectOther()" />
+                    <span>Other</span>
+                  </label>
+                </div>
+                <div id="subjectOtherContainer" class="other-input-container" style="display: none; margin-top: 10px;">
+                  <input type="text" id="subjectOtherInput" name="subject_other" class="form-input" placeholder="Please specify the subject" />
                 </div>
               </div>
 
